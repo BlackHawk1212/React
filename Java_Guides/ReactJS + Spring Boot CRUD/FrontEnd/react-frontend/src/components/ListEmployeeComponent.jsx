@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
+// import { useNavigate } from 'react-router-dom'
 
 export default class ListEmployeeComponent extends Component {
+    
     constructor(props) {
         super(props)
 
         this.state = {
             employees: []
         }
+        this.addEmployee = this.addEmployee.bind(this);
     }
 
     componentDidMount(){
@@ -16,12 +19,20 @@ export default class ListEmployeeComponent extends Component {
         });
     }
 
+    addEmployee(){
+        this.props.history.push('/add-employee');
+    }
+
     render() {
         return (
             <div>
                 <h2 className='text-center'>Employee List</h2>
                 <div className="row">
-                    <table classname="table table-striped table-bordered">
+                    <button className="btn btn-primary" onClick={this.addEmployee}>Add Employee</button>
+                </div>
+                <br></br>
+                <div className="row">
+                    <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Employee First Name</th>
