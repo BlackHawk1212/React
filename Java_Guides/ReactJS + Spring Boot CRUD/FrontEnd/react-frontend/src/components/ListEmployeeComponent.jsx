@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import EmployeeService from '../services/EmployeeService'
 // import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +29,8 @@ export default class ListEmployeeComponent extends Component {
             <div>
                 <h2 className='text-center'>Employee List</h2>
                 <div className="row">
-                    <button className="btn btn-primary" onClick={this.addEmployee}>Add Employee</button>
+                    {/* <button className="btn btn-primary" onClick={this.addEmployee}>Add Employee</button> */}
+                    <Link className="btn btn-secondary" to={"/add-employee"} style={{ width: "150px", marginRight: "5px" }} >Add Employee</Link>
                 </div>
                 <br></br>
                 <div className="row">
